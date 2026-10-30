@@ -10,20 +10,21 @@ import {
     Grid,
     IconButton,
     CellHeader,
-    CellSimple, CellList, CellInput
+    CellSimple, CellList, CellInput,
 } from "@maxhub/max-ui";
 function App() {
 
     return (
         <MaxUI>
             <Panel
+                className="page"
                 mode="secondary"
             >
                 <Flex
                     direction="column"
                     gap={24}
                 >
-                    <Container>
+                    <Container className="header">
                         <Flex
                             direction="column"
                             align="center"
@@ -40,15 +41,16 @@ function App() {
                             </Avatar.Container>
 
                             <Flex
-
+                                className="details"
                                 direction="column"
                                 align="center"
                             >
                                 <Typography.Headline variant="large-strong">Vadim Tregubenko</Typography.Headline>
-                                <Typography.Body variant="small">1 подписчик</Typography.Body>
+                                <Typography.Body variant="small" className="subsLabel">1 подписчик</Typography.Body>
                             </Flex>
 
                             <Grid
+                                className="actions"
                                 cols={4}
                                 gap={8}
                             >
@@ -58,7 +60,6 @@ function App() {
                                         onClick={() => {}}
                                         variant="secondary"
                                     >
-
                                     </IconButton>
                                     <Typography.Label variant="small">Уведомл.</Typography.Label>
                                 </Flex>
@@ -70,6 +71,7 @@ function App() {
                     <Flex
                         direction="column"
                         gap={16}
+                        className="body"
                     >
                         <CellList
                             mode="island"
@@ -91,7 +93,7 @@ function App() {
                         ...
                     </CellList>
 
-                    <Container>
+                    <Container className="actions">
                         <Flex gap={8}>
                             <Button
                                 size="large"
@@ -107,6 +109,10 @@ function App() {
                             </IconButton>
                         </Flex>
                     </Container>
+                    <Avatar.Container>
+                        <Avatar.Icon>
+                        </Avatar.Icon>
+                    </Avatar.Container>
                 </Flex>
             </Panel>
         </MaxUI>
